@@ -3,9 +3,14 @@
 
   "name": "HideRank",
   "description": "This extension hides the rannk column in Moodle gradebook.",
-  "version": "1.0",
+  "version": "0.1",
   
-  "permissions": [
-    "activeTab",
+  "content_scripts": [
+    {
+      "matches": ["*://moodle.rose-hulman.edu/grade/report/*"],
+      "js": ["main.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
   ]
 }
